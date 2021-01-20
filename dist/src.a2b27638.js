@@ -35885,7 +35885,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    flex-basis: 100%; \n    height: 0;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -35895,7 +35895,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    font-size: 13px;\n    color: #757575;\n    margin-bottom: 40px;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -35905,7 +35905,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    font-size: 16px;\n    color: #757575;\n    margin-bottom: 40px;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -35915,7 +35915,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    color: #757575;\n    margin-bottom: 20px;\n    font-size: 13px;\n    text-decoration: none;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -35925,7 +35925,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: column;\n    text-align: left;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -35935,7 +35935,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    display: grid;\n    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));\n    grid-gap: 15px;\n\n    @media (max-width: 1000px) {\n        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));\n    }\n\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -35945,7 +35945,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n"]);
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    max-width: 1000px;\n    flex-direction: column;\n    padding: 70px 56px;\n    margin: auto;\n\n    @media (max-width: 1000px) {\n        padding: 70px 30px;\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
