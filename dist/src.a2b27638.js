@@ -36624,7 +36624,7 @@ var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n\n"]);
+  var data = _taggedTemplateLiteral(["\n    background: #e50914;\n    border-radius: 4px;\n    font-size: 16px;\n    font-weight: bold;\n    margin: 0 0 12px;\n    padding: 16px;\n    border: 0;\n    color: white;\n    cursor: pointer;\n    &:disabled {\n        opacity: 0.5;\n    }\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -36634,7 +36634,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n\n"]);
+  var data = _taggedTemplateLiteral(["\n    background: #333;\n    border-radius: 4px;\n    border: 0;\n    color: #fff;\n    height: 50px;\n    line-height: 50px;\n    padding: 5px 20px;\n    margin-bottom: 20px;\n    &:last-of-type {\n        margin-bottom: 30px;\n    }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -36644,7 +36644,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n\n"]);
+  var data = _taggedTemplateLiteral(["\n    color: #fff;\n    text-decoration: none;\n    &:hover {\n        text-decoration: underline;\n    }\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -36654,7 +36654,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n\n"]);
+  var data = _taggedTemplateLiteral(["\n    margin-top: 10px;\n    font-size: 13px;\n    line-height: normal;\n    color: #8c8c8c;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -36664,7 +36664,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n\n"]);
+  var data = _taggedTemplateLiteral(["\n    color: #737373;\n    font-size: 16px;\n    font-weight: 500;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -36674,7 +36674,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n\n"]);
+  var data = _taggedTemplateLiteral(["\n    color: #fff;\n    font-size: 32px;\n    font-weight: bold;\n    margin-bottom: 28px;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -36684,7 +36684,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n\n"]);
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: column;\n    max-width: 450px;\n    width: 100%;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -36694,7 +36694,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n\n"]);
+  var data = _taggedTemplateLiteral(["\n    background: #e87c03;\n    border-radius: 4px;\n    font-size: 14px;\n    margin: 0 0 16px;\n    color: white;\n    padding: 15px 20px;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -36704,7 +36704,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n\n"]);
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: column;\n    min-height: 660px;\n    background-color: rgba(0, 0, 0, 0.75);\n    border-radius: 5px;\n    box-sizing: border-box;\n    width: 100%;\n    margin: auto;\n    max-width: 450px;\n    padding: 60px 68px 40px;\n    margin-bottom: 100px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -37111,6 +37111,8 @@ var _form = _interopRequireDefault(require("../components/form"));
 
 var _header = _interopRequireDefault(require("../containers/header"));
 
+var _footer = _interopRequireDefault(require("../containers/footer"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
@@ -37135,9 +37137,145 @@ function Signin() {
       error = _useState2[0],
       setError = _useState2[1];
 
-  return /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_form.default, null, /*#__PURE__*/_react.default.createElement(_form.default.Title, null, "Sign in"), error && /*#__PURE__*/_react.default.createElement(_form.default.Error, null, error)));
+  var _useState3 = (0, _react.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      emailAddress = _useState4[0],
+      setEmailAddress = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      password = _useState6[0],
+      setPassword = _useState6[1];
+
+  var isInValid = emailAddress === "" || password === "";
+
+  var handleSignin = function handleSignin(event) {
+    event.preventDefault();
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_form.default, null, /*#__PURE__*/_react.default.createElement(_form.default.Title, null, "Sign in"), error && /*#__PURE__*/_react.default.createElement(_form.default.Error, null, error), /*#__PURE__*/_react.default.createElement(_form.default.Base, {
+    onSubmit: handleSignin,
+    method: "POst"
+  }, /*#__PURE__*/_react.default.createElement(_form.default.Input, {
+    placeholder: "Email address",
+    value: emailAddress,
+    onChange: function onChange(_ref) {
+      var target = _ref.target;
+      return setEmailAddress(target.value);
+    }
+  }), /*#__PURE__*/_react.default.createElement(_form.default.Input, {
+    placeholder: "Password",
+    type: "password",
+    value: password,
+    autoComplete: "off",
+    onChange: function onChange(_ref2) {
+      var target = _ref2.target;
+      return setPassword(target.value);
+    }
+  }), /*#__PURE__*/_react.default.createElement(_form.default.Submit, {
+    type: "submit",
+    disabled: isInValid
+  }, "Sign in"), /*#__PURE__*/_react.default.createElement(_form.default.Text, null, "New to Netflix?  ", /*#__PURE__*/_react.default.createElement(_form.default.Link, {
+    to: "/signup"
+  }, "Sign up now.")), /*#__PURE__*/_react.default.createElement(_form.default.TextSmall, null, "This page is protected by Google reCAPTCHA.")))), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../components/form":"src/components/form/index.js","../containers/header":"src/containers/header.js"}],"src/pages/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components/form":"src/components/form/index.js","../containers/header":"src/containers/header.js","../containers/footer":"src/containers/footer.js"}],"src/pages/signup.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Signup;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _header = _interopRequireDefault(require("../containers/header"));
+
+var _form = _interopRequireDefault(require("../components/form"));
+
+var _footer = _interopRequireDefault(require("../containers/footer"));
+
+var ROUTES = _interopRequireWildcard(require("../constants/routes"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function Signup() {
+  var _useState = (0, _react.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      firstName = _useState2[0],
+      setFirstName = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      emailAddress = _useState4[0],
+      setEmailAddress = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      password = _useState6[0],
+      setPassword = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      error = _useState8[0],
+      setError = _useState8[1];
+
+  var isInValid = emailAddress === "" || password === "" || firstName === "";
+
+  var handleSignup = function handleSignup(event) {
+    event.preventDefault();
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_form.default, null, /*#__PURE__*/_react.default.createElement(_form.default.Title, null, "Sign up"), error && /*#__PURE__*/_react.default.createElement(_form.default.Error, null, error), /*#__PURE__*/_react.default.createElement(_form.default.Base, {
+    onSubmit: handleSignup,
+    method: "POst"
+  }, /*#__PURE__*/_react.default.createElement(_form.default.Input, {
+    placeholder: "FirstName",
+    value: firstName,
+    onChange: function onChange(_ref) {
+      var target = _ref.target;
+      return setFirstName(target.value);
+    }
+  }), /*#__PURE__*/_react.default.createElement(_form.default.Input, {
+    placeholder: "Email address",
+    value: emailAddress,
+    onChange: function onChange(_ref2) {
+      var target = _ref2.target;
+      return setEmailAddress(target.value);
+    }
+  }), /*#__PURE__*/_react.default.createElement(_form.default.Input, {
+    placeholder: "Password",
+    type: "password",
+    value: password,
+    autoComplete: "off",
+    onChange: function onChange(_ref3) {
+      var target = _ref3.target;
+      return setPassword(target.value);
+    }
+  }), /*#__PURE__*/_react.default.createElement(_form.default.Submit, {
+    type: "submit",
+    disabled: isInValid
+  }, "Sign up"), /*#__PURE__*/_react.default.createElement(_form.default.Text, null, "Already have an account. ", /*#__PURE__*/_react.default.createElement(_form.default.Link, {
+    to: ROUTES.SIGN_IN
+  }, "Sign in.")), /*#__PURE__*/_react.default.createElement(_form.default.TextSmall, null, "This page is protected by Google reCAPTCHA.")))), /*#__PURE__*/_react.default.createElement(_footer.default, null));
+}
+},{"react":"node_modules/react/index.js","../containers/header":"src/containers/header.js","../components/form":"src/components/form/index.js","../containers/footer":"src/containers/footer.js","../constants/routes":"src/constants/routes.js"}],"src/pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37155,13 +37293,21 @@ Object.defineProperty(exports, "Signin", {
     return _signin.default;
   }
 });
+Object.defineProperty(exports, "Signup", {
+  enumerable: true,
+  get: function () {
+    return _signup.default;
+  }
+});
 
 var _home = _interopRequireDefault(require("./home"));
 
 var _signin = _interopRequireDefault(require("./signin"));
 
+var _signup = _interopRequireDefault(require("./signup"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./home":"src/pages/home.js","./signin":"src/pages/signin.js"}],"src/app.js":[function(require,module,exports) {
+},{"./home":"src/pages/home.js","./signin":"src/pages/signin.js","./signup":"src/pages/signup.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37188,7 +37334,7 @@ function App() {
     path: ROUTES.SIGN_IN
   }, /*#__PURE__*/_react.default.createElement(_pages.Signin, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: ROUTES.SIGN_UP
-  }, /*#__PURE__*/_react.default.createElement("p", null, "I will be the sign up page")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }, /*#__PURE__*/_react.default.createElement(_pages.Signup, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: ROUTES.BROWSE
   }, /*#__PURE__*/_react.default.createElement("p", null, "I will be the browse page")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: ROUTES.HOME
@@ -37265,7 +37411,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53311" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54968" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

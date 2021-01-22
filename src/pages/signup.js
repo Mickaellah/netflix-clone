@@ -1,25 +1,34 @@
 import React, {useState} from 'react';
-import Form from '../components/form';
 import HeaderContainer from '../containers/header';
+import Form from '../components/form';
 import FooterContainer from '../containers/footer';
+import * as ROUTES from '../constants/routes';
 
-export default function Signin() {
-    const [error, setError] = useState('');
+export default function Signup() {
+    const [firstName, setFirstName] = useState('');
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
-    const isInValid = emailAddress === "" || password === "";
+    const isInValid = emailAddress === "" || password === "" || firstName === "";
 
-    const handleSignin = (event) => {
+    const handleSignup = (event) => {
         event.preventDefault();
     }
+
     return (
         <>
             <HeaderContainer>
                 <Form>
-                    <Form.Title>Sign in</Form.Title>
+                    <Form.Title>Sign up</Form.Title>
                     {error && <Form.Error>{error}</Form.Error>}
-                    <Form.Base onSubmit={handleSignin} method="POst">
+                    <Form.Base onSubmit={handleSignup} method="POst">
+                        <Form.Input 
+                            placeholder="FirstName"
+                            value={firstName}
+                            onChange={({target}) => setFirstName(target.value)} 
+                        />
+                        
                         <Form.Input 
                             placeholder="Email address"
                             value={emailAddress}
@@ -37,11 +46,11 @@ export default function Signin() {
                             type="submit"
                             disabled={isInValid}
                         >
-                            Sign in
+                            Sign up
                         </Form.Submit>
 
                         <Form.Text>
-                            New to Netflix?  <Form.Link to='/signup'>Sign up now.</Form.Link>
+                            Already have an account. <Form.Link to={ROUTES.SIGN_IN}>Sign in.</Form.Link>
                         </Form.Text>
 
                         <Form.TextSmall>
