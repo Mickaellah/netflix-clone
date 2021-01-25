@@ -37265,7 +37265,19 @@ function home() {
     placeholder: "Email Adress"
   }), /*#__PURE__*/_react.default.createElement(_components.OptForm.Button, null, "Try it now"), /*#__PURE__*/_react.default.createElement(_components.OptForm.Text, null, "Ready to watch? Enter your email to create or restart your membership.")))), /*#__PURE__*/_react.default.createElement(_jumbotron.default, null), /*#__PURE__*/_react.default.createElement(_faqs.default, null), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../containers/faqs":"src/containers/faqs.js","../containers/jumbotron":"src/containers/jumbotron.js","../containers/footer":"src/containers/footer.js","../containers/header":"src/containers/header.js","../components":"src/components/index.js"}],"src/pages/signin.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../containers/faqs":"src/containers/faqs.js","../containers/jumbotron":"src/containers/jumbotron.js","../containers/footer":"src/containers/footer.js","../containers/header":"src/containers/header.js","../components":"src/components/index.js"}],"src/context/firebase.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.FirebaseContext = void 0;
+
+var _react = require("react");
+
+var FirebaseContext = (0, _react.createContext)(null);
+exports.FirebaseContext = FirebaseContext;
+},{"react":"node_modules/react/index.js"}],"src/pages/signin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37275,11 +37287,17 @@ exports.default = Signin;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
+var _firebase = require("../context/firebase");
+
 var _form = _interopRequireDefault(require("../components/form"));
 
 var _header = _interopRequireDefault(require("../containers/header"));
 
 var _footer = _interopRequireDefault(require("../containers/footer"));
+
+var ROUTES = _interopRequireWildcard(require("../constants/routes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37300,6 +37318,11 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Signin() {
+  var _useContext = (0, _react.useContext)(_firebase.FirebaseContext),
+      firebase = _useContext.firebase;
+
+  var history = (0, _reactRouterDom.useHistory)();
+
   var _useState = (0, _react.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       error = _useState2[0],
@@ -37319,6 +37342,14 @@ function Signin() {
 
   var handleSignin = function handleSignin(event) {
     event.preventDefault();
+    firebase.auth().signInWithEmailAndPassword(emailAddress, password).then(function () {
+      setEmailAddress();
+      setPassword();
+      setError();
+      history.push(ROUTES.BROWSE);
+    }).catch(function (error) {
+      return setError(error.message);
+    });
   };
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_form.default, null, /*#__PURE__*/_react.default.createElement(_form.default.Title, null, "Sign in"), error && /*#__PURE__*/_react.default.createElement(_form.default.Error, null, error), /*#__PURE__*/_react.default.createElement(_form.default.Base, {
@@ -37347,7 +37378,7 @@ function Signin() {
     to: "/signup"
   }, "Sign up now.")), /*#__PURE__*/_react.default.createElement(_form.default.TextSmall, null, "This page is protected by Google reCAPTCHA.")))), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../components/form":"src/components/form/index.js","../containers/header":"src/containers/header.js","../containers/footer":"src/containers/footer.js"}],"src/pages/signup.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../context/firebase":"src/context/firebase.js","../components/form":"src/components/form/index.js","../containers/header":"src/containers/header.js","../containers/footer":"src/containers/footer.js","../constants/routes":"src/constants/routes.js"}],"src/pages/signup.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37356,6 +37387,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = Signup;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _firebase = require("../context/firebase");
 
 var _header = _interopRequireDefault(require("../containers/header"));
 
@@ -37384,6 +37419,11 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Signup() {
+  var history = (0, _reactRouterDom.useHistory)();
+
+  var _useContext = (0, _react.useContext)(_firebase.FirebaseContext),
+      firebase = _useContext.firebase;
+
   var _useState = (0, _react.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       firstName = _useState2[0],
@@ -37408,6 +37448,19 @@ function Signup() {
 
   var handleSignup = function handleSignup(event) {
     event.preventDefault();
+    firebase.auth().createUserWithEmailAndPassword(emailAddress, password).then(function (result) {
+      result.user.updateProfile({
+        displayName: firstName,
+        photoURL: Math.floor(Math.random() * 5) + 1
+      }).then(function () {
+        setEmailAddress('');
+        setPassword('');
+        setError();
+        history.push(ROUTES.BROWSE);
+      });
+    }).catch(function (error) {
+      return setError(error.message);
+    });
   };
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_form.default, null, /*#__PURE__*/_react.default.createElement(_form.default.Title, null, "Sign up"), error && /*#__PURE__*/_react.default.createElement(_form.default.Error, null, error), /*#__PURE__*/_react.default.createElement(_form.default.Base, {
@@ -37443,19 +37496,7 @@ function Signup() {
     to: ROUTES.SIGN_IN
   }, "Sign in.")), /*#__PURE__*/_react.default.createElement(_form.default.TextSmall, null, "This page is protected by Google reCAPTCHA.")))), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../containers/header":"src/containers/header.js","../components/form":"src/components/form/index.js","../containers/footer":"src/containers/footer.js","../constants/routes":"src/constants/routes.js"}],"src/context/firebase.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.FirebaseContext = void 0;
-
-var _react = require("react");
-
-var FirebaseContext = (0, _react.createContext)(null);
-exports.FirebaseContext = FirebaseContext;
-},{"react":"node_modules/react/index.js"}],"src/containers/profiles.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../context/firebase":"src/context/firebase.js","../containers/header":"src/containers/header.js","../components/form":"src/components/form/index.js","../containers/footer":"src/containers/footer.js","../constants/routes":"src/constants/routes.js"}],"src/containers/profiles.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37697,7 +37738,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54968" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65057" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
