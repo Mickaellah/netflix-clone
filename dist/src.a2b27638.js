@@ -37363,7 +37363,399 @@ Loading.ReleaseBody = function LoadingReleaseBody(_ref2) {
   var restProps = Object.assign({}, _ref2);
   return /*#__PURE__*/_react.default.createElement(_loading.ReleaseBody, restProps);
 };
-},{"react":"node_modules/react/index.js","./styles/loading":"src/components/loading/styles/loading.js"}],"src/components/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styles/loading":"src/components/loading/styles/loading.js"}],"src/components/card/styles/card.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Maturity = exports.Content = exports.FeatureClose = exports.FeatureTitle = exports.Feature = exports.FeatureText = exports.Item = exports.Image = exports.Meta = exports.Entities = exports.Text = exports.SubTitle = exports.Group = exports.Container = exports.Title = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n    background-color: ", ";\n    border-radius: 15px;\n    width: 20px;\n    padding: 5px;\n    text-align: center;\n    color: white;\n    font-weight: bold;\n    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);\n    margin-right: 10px;\n    font-size: 12px;\n"]);
+
+  _templateObject15 = function _templateObject15() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject14() {
+  var data = _taggedTemplateLiteral(["\n    margin: 56px;\n    max-width: 500px;\n    line-height: normal;\n    @media (max-width: 1000px) {\n        margin: 30px;\n        max-width: none;\n    }\n"]);
+
+  _templateObject14 = function _templateObject14() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n    color: white;\n    position: absolute;\n    right: 20px;\n    top: 20px;\n    cursor: pointer;\n    background-color: transparent;\n    border: 0;\n    img {\n        filter: brightness(0) invert(1);\n        width: 24px;\n    }\n"]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n    margin-left: 0;\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: row;\n    background: url(", ");\n    background-size: contain;\n    position: relative;\n    height: 360px;\n    background-position-x: right;\n    background-repeat: no-repeat;\n    background-color: black;\n    @media (max-width: 1000px) {\n        height: auto;\n        background-size: auto;\n        ", " {\n            font-size: 20px;\n            line-height: 20px;\n            margin-bottom: 10px;\n        }\n        ", " {\n            font-size: 14px;\n        }\n    }\n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 18px;\n    color: white;\n    font-weight: ", ";\n    margin: 0;\n    @media (max-width: 800px) {\n        line-height: 22px;\n    }\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: column;\n    margin-right: 5px;\n    position: relative;\n    cursor: pointer;\n    transition: transform 0.2;\n    &:hover {\n        transform: scale(1.3);\n        z-index: 99;\n    }\n    @media (min-width: 1000px) {\n        &:hover ", ", &:hover ", ", &:hover ", " {\n            display: block;\n            z-index: 100;\n        }\n    }\n    &:first-of-type {\n        margin-left: 56px;\n        @media (max-width: 1000px) {\n            margin-left: 30px;\n        }\n    }\n    &:last-of-type {\n        margin-right: 56px;\n        @media (max-width: 1000px) {\n            margin-right: 30px;\n        }\n    }\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n    border: 0;\n    width: 100%;\n    max-width: 305px;\n    cursor: pointer;\n    height: auto;\n    padding: 0;\n    margin: 0;\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n    display: none;\n    position: absolute;\n    bottom: 0;\n    padding: 10px;\n    background-color: #0000008f;\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: row;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n    margin-top: 5px;\n    font-size: 10px;\n    color: white;\n    margin-bottom: 0;\n    user-select: none;\n    display: none;\n    line-height: normal;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 12px;\n    color: white;\n    font-weight: bold;\n    margin-top: 0;\n    margin-bottom: 0;\n    user-select: none;\n    display: none;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: ", ";\n    ", ";\n    ", ";\n    > ", ":first-of-type {\n        @media (min-width: 1100px) {\n            margin-top: -150px;\n        }\n    }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: column;\n    margin-bottom: 50px;\n    box-sizing: border-box;\n    > ", " {\n        @media (max-width: 1000px) {\n            margin-left: 30px;\n        }\n    }\n    &:last-of-type {\n        margin-bottom: 0;\n    }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 24px;\n    color: #e5e5e5;\n    font-weight: bold;\n    margin-left: 56px;\n    margin-right: 56px;\n    margin-top: 0;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Title = _styledComponents.default.p(_templateObject());
+
+exports.Title = Title;
+
+var Container = _styledComponents.default.div(_templateObject2(), Title);
+
+exports.Container = Container;
+
+var Group = _styledComponents.default.div(_templateObject3(), function (_ref) {
+  var flexDirection = _ref.flexDirection;
+  return flexDirection === 'row' ? 'row' : 'column';
+}, function (_ref2) {
+  var alignItems = _ref2.alignItems;
+  return alignItems && "align-items: ".concat(alignItems);
+}, function (_ref3) {
+  var margin = _ref3.margin;
+  return margin && "margin: ".concat(margin);
+}, Container);
+
+exports.Group = Group;
+
+var SubTitle = _styledComponents.default.p(_templateObject4());
+
+exports.SubTitle = SubTitle;
+
+var Text = _styledComponents.default.p(_templateObject5());
+
+exports.Text = Text;
+
+var Entities = _styledComponents.default.div(_templateObject6());
+
+exports.Entities = Entities;
+
+var Meta = _styledComponents.default.div(_templateObject7());
+
+exports.Meta = Meta;
+
+var Image = _styledComponents.default.img(_templateObject8());
+
+exports.Image = Image;
+
+var Item = _styledComponents.default.div(_templateObject9(), Meta, Text, SubTitle);
+
+exports.Item = Item;
+
+var FeatureText = _styledComponents.default.p(_templateObject10(), function (_ref4) {
+  var fontWeight = _ref4.fontWeight;
+  fontWeight === 'bold' ? 'bold' : 'normal';
+});
+
+exports.FeatureText = FeatureText;
+
+var Feature = _styledComponents.default.div(_templateObject11(), function (_ref5) {
+  var src = _ref5.src;
+  return src;
+}, Title, FeatureText);
+
+exports.Feature = Feature;
+var FeatureTitle = (0, _styledComponents.default)(Title)(_templateObject12());
+exports.FeatureTitle = FeatureTitle;
+
+var FeatureClose = _styledComponents.default.button(_templateObject13());
+
+exports.FeatureClose = FeatureClose;
+
+var Content = _styledComponents.default.div(_templateObject14());
+
+exports.Content = Content;
+
+var Maturity = _styledComponents.default.div(_templateObject15(), function (_ref6) {
+  var rating = _ref6.rating;
+  return rating >= 15 ? 'red' : 'green';
+});
+
+exports.Maturity = Maturity;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/card/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Card;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _card = require("./styles/card");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+var FeatureContext = (0, _react.createContext)();
+
+function Card(_ref) {
+  var children = _ref.children,
+      restProps = _objectWithoutProperties(_ref, ["children"]);
+
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      showFeature = _useState2[0],
+      setShowFeature = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      itemFeature = _useState4[0],
+      setitemFeature = _useState4[1];
+
+  return /*#__PURE__*/_react.default.createElement(FeatureContext.Provider, {
+    value: {
+      showFeature: showFeature,
+      setShowFeature: setShowFeature,
+      itemFeature: itemFeature,
+      setitemFeature: setitemFeature
+    }
+  }, /*#__PURE__*/_react.default.createElement(_card.Container, restProps, children));
+}
+
+Card.Group = function CardGroup(_ref2) {
+  var children = _ref2.children,
+      restProps = _objectWithoutProperties(_ref2, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_card.Group, restProps, children);
+};
+
+Card.Title = function CardTitle(_ref3) {
+  var children = _ref3.children,
+      restProps = _objectWithoutProperties(_ref3, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_card.Title, restProps, children);
+};
+
+Card.SubTitle = function CardSubTitle(_ref4) {
+  var children = _ref4.children,
+      restProps = _objectWithoutProperties(_ref4, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_card.SubTitle, restProps, children);
+};
+
+Card.Text = function CardText(_ref5) {
+  var children = _ref5.children,
+      restProps = _objectWithoutProperties(_ref5, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_card.Text, restProps, children);
+};
+
+Card.Entities = function CardEntities(_ref6) {
+  var children = _ref6.children,
+      restProps = _objectWithoutProperties(_ref6, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_card.Entities, restProps, children);
+};
+
+Card.Meta = function CardMeta(_ref7) {
+  var children = _ref7.children,
+      restProps = _objectWithoutProperties(_ref7, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_card.Meta, restProps, children);
+};
+
+Card.Item = function CardItem(_ref8) {
+  var item = _ref8.item,
+      children = _ref8.children,
+      restProps = _objectWithoutProperties(_ref8, ["item", "children"]);
+
+  var _useContext = (0, _react.useContext)(FeatureContext),
+      setShowFeature = _useContext.setShowFeature,
+      setitemFeature = _useContext.setitemFeature;
+
+  return /*#__PURE__*/_react.default.createElement(_card.Item, _extends({
+    onClick: function onClick() {
+      setitemFeature(item);
+      setShowFeature(true);
+    }
+  }, restProps), children);
+};
+
+Card.Image = function CardImage(_ref9) {
+  var restProps = Object.assign({}, _ref9);
+  return /*#__PURE__*/_react.default.createElement(_card.Image, restProps);
+};
+
+Card.Feature = function CardFeature(_ref10) {
+  var children = _ref10.children,
+      category = _ref10.category,
+      restProps = _objectWithoutProperties(_ref10, ["children", "category"]);
+
+  var _useContext2 = (0, _react.useContext)(FeatureContext),
+      showFeature = _useContext2.showFeature,
+      itemFeature = _useContext2.itemFeature,
+      setShowFeature = _useContext2.setShowFeature;
+
+  return showFeature ? /*#__PURE__*/_react.default.createElement(_card.Feature, {
+    src: "/images/".concat(category, "/").concat(itemFeature.genre, "/").concat(itemFeature.slug, "/large.jpg")
+  }, /*#__PURE__*/_react.default.createElement(_card.Content, null, /*#__PURE__*/_react.default.createElement(_card.FeatureTitle, null, itemFeature.title), /*#__PURE__*/_react.default.createElement(_card.FeatureText, null, itemFeature.description), /*#__PURE__*/_react.default.createElement(_card.FeatureClose, {
+    onClick: function onClick() {
+      return setShowFeature(false);
+    }
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: "/images/icons/close.png",
+    alt: "CLose"
+  })), /*#__PURE__*/_react.default.createElement(_card.Group, {
+    margin: "30px 0",
+    flexDirection: "row",
+    alignItem: "center"
+  }, /*#__PURE__*/_react.default.createElement(_card.Maturity, {
+    rating: itemFeature.maturity
+  }, itemFeature.maturity < 12 ? "PG" : itemFeature.maturity), /*#__PURE__*/_react.default.createElement(_card.FeatureText, {
+    fontWeight: "bold"
+  }, itemFeature.genre.charAt(0).toUpperCase() + itemFeature.genre.slice(1))), children)) : null;
+};
+},{"react":"node_modules/react/index.js","./styles/card":"src/components/card/styles/card.js"}],"src/components/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37423,6 +37815,12 @@ Object.defineProperty(exports, "Loading", {
     return _loading.default;
   }
 });
+Object.defineProperty(exports, "Card", {
+  enumerable: true,
+  get: function () {
+    return _card.default;
+  }
+});
 
 var _accordion = _interopRequireDefault(require("./accordion"));
 
@@ -37442,8 +37840,10 @@ var _profiles = _interopRequireDefault(require("./profiles"));
 
 var _loading = _interopRequireDefault(require("./loading"));
 
+var _card = _interopRequireDefault(require("./card"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./accordion":"src/components/accordion/index.js","./jumbotron":"src/components/jumbotron/index.js","./footer":"src/components/footer/index.js","./opt-form":"src/components/opt-form/index.js","./header":"src/components/header/index.js","./feature":"src/components/feature/index.js","./form":"src/components/form/index.js","./profiles":"src/components/profiles/index.js","./loading":"src/components/loading/index.js"}],"src/fixtures/faqs.json":[function(require,module,exports) {
+},{"./accordion":"src/components/accordion/index.js","./jumbotron":"src/components/jumbotron/index.js","./footer":"src/components/footer/index.js","./opt-form":"src/components/opt-form/index.js","./header":"src/components/header/index.js","./feature":"src/components/feature/index.js","./form":"src/components/form/index.js","./profiles":"src/components/profiles/index.js","./loading":"src/components/loading/index.js","./card":"src/components/card/index.js"}],"src/fixtures/faqs.json":[function(require,module,exports) {
 module.exports = [{
   "id": 1,
   "header": "What is Netflix?",
@@ -37957,7 +38357,9 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function BrowseContainer() {
+function BrowseContainer(_ref) {
+  var slides = _ref.slides;
+
   var _useState = (0, _react.useState)('series'),
       _useState2 = _slicedToArray(_useState, 2),
       category = _useState2[0],
@@ -37978,6 +38380,14 @@ function BrowseContainer() {
       profile = _useState8[0],
       setProfile = _useState8[1];
 
+  var _useState9 = (0, _react.useState)([]),
+      _useState10 = _slicedToArray(_useState9, 2),
+      slideRows = _useState10[0],
+      setSlideRows = _useState10[1];
+
+  var _useContext = (0, _react.useContext)(_firebase.FirebaseContext),
+      firebase = _useContext.firebase;
+
   var user = {
     displayName: "Karl",
     photoUrl: "1"
@@ -37987,6 +38397,9 @@ function BrowseContainer() {
       setLoading(false);
     }, 3000);
   }, [user]);
+  (0, _react.useEffect)(function () {
+    setSlideRows(slides[category]);
+  }, [slides, category]);
   return profile.displayName ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, loading ? /*#__PURE__*/_react.default.createElement(_components.Loading, {
     src: user.photoUrl
   }) : /*#__PURE__*/_react.default.createElement(_components.Loading.ReleaseBody, null), /*#__PURE__*/_react.default.createElement(_components.Header, {
@@ -38017,7 +38430,20 @@ function BrowseContainer() {
     onClick: function onClick() {
       return firebase.auth().signOut();
     }
-  }, "Sign out")))))), /*#__PURE__*/_react.default.createElement(_components.Header.Feature, null, /*#__PURE__*/_react.default.createElement(_components.Header.FeatureCallOut, null, "Watch Joker Now"), /*#__PURE__*/_react.default.createElement(_components.Header.Text, null, "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him."), /*#__PURE__*/_react.default.createElement(_components.Header.PlayButton, null, "Play"))), /*#__PURE__*/_react.default.createElement(_footer.default, null)) : /*#__PURE__*/_react.default.createElement(_profiles.default, {
+  }, "Sign out")))))), /*#__PURE__*/_react.default.createElement(_components.Header.Feature, null, /*#__PURE__*/_react.default.createElement(_components.Header.FeatureCallOut, null, "Watch Joker Now"), /*#__PURE__*/_react.default.createElement(_components.Header.Text, null, "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him."), /*#__PURE__*/_react.default.createElement(_components.Header.PlayButton, null, "Play"))), /*#__PURE__*/_react.default.createElement(_components.Card.Group, null, slideRows.map(function (slideItem) {
+    return /*#__PURE__*/_react.default.createElement(_components.Card, {
+      key: "".concat(category, "-").concat(slideItem.title.toLowerCase())
+    }, /*#__PURE__*/_react.default.createElement(_components.Card.Title, null, slideItem.title), /*#__PURE__*/_react.default.createElement(_components.Card.Entities, null, slideItem.data.map(function (item) {
+      return /*#__PURE__*/_react.default.createElement(_components.Card.Item, {
+        key: item.docId,
+        item: item
+      }, /*#__PURE__*/_react.default.createElement(_components.Card.Image, {
+        src: "/images/".concat(category, "/").concat(item.genre, "/").concat(item.slug, "/small.jpg")
+      }), /*#__PURE__*/_react.default.createElement(_components.Card.Meta, null, /*#__PURE__*/_react.default.createElement(_components.Card.SubTitle, null, item.title), /*#__PURE__*/_react.default.createElement(_components.Card.Text, null, item.description)));
+    })), /*#__PURE__*/_react.default.createElement(_components.Card.Feature, {
+      category: category
+    }));
+  })), /*#__PURE__*/_react.default.createElement(_footer.default, null)) : /*#__PURE__*/_react.default.createElement(_profiles.default, {
     user: user,
     setProfile: setProfile
   });
@@ -38203,7 +38629,9 @@ function Browse() {
     films: films
   });
   console.log(slides);
-  return /*#__PURE__*/_react.default.createElement(_browse.default, null);
+  return /*#__PURE__*/_react.default.createElement(_browse.default, {
+    slides: slides
+  });
 }
 },{"react":"node_modules/react/index.js","../containers/browse":"src/containers/browse.js","../hooks":"src/hooks/index.js","../utils":"src/utils/index.js"}],"src/pages/index.js":[function(require,module,exports) {
 "use strict";
@@ -38338,7 +38766,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60894" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53966" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
