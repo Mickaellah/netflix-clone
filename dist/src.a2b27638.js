@@ -42510,7 +42510,16 @@ var config = {
   storageBucket: 'netflix-onja-clopedia.appspot.com',
   messagingSenderId: '769208031154',
   appId: '1:769208031154:web:79dd8b5bf0c3031417f6ab'
-};
+}; // const config = {
+//     apiKey: 'AIzaSyA6BlVmJRgJjpy0HzYMu25-owj0JSl6jBU',
+//     authDomain: 'netflix-onja-clopedia.firebaseapp.com',
+//     databaseUrl: 'https://netflix-onja-clopedia.firebaseapp.com',
+//     projectId: 'netflix-onja-clopedia',
+//     storageBucket: 'netflix-onja-clopedia.appspot.com',
+//     messagingSenderId: '769208031154',
+//     appId: '1:769208031154:web:79dd8b5bf0c3031417f6ab',
+// }
+
 var firebase = window.firebase.initializeApp(config); // seedDatabase(firebase);
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_firebase.FirebaseContext.Provider, {
@@ -42546,7 +42555,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52490" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61180" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
